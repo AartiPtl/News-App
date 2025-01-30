@@ -1,6 +1,6 @@
 import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import Categories from './news/categories';
+//import Categories from './news/categories';
 import { useRouter } from 'expo-router';
 
 const Home = () => {

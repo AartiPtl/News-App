@@ -6,20 +6,32 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { Colors } from "react-native/Libraries/NewAppScreen";
 
 export default function RootLayout() {   //code for bottom tab navigation
-    return (
-        <QueryClientProvider client={queryClient}>
-            <Tabs>
-                <Tabs.Screen name="index" 
-                options={{
-                    title:"Home",
-                    headerShown: true,
-                    tabBarIcon:({color}) => (
-                    <MaterialIcons name="home" size={30} color="black" />
-                    ),
-                    tabBarLabelStyle: {fontSize:12 },
-                 }}
-                />
-                <Tabs.Screen
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Tabs>
+        <Tabs.Screen name="index"
+          options={{
+            title: "Home",
+            headerShown: true,
+            tabBarIcon: ({ color }) => (
+              <MaterialIcons name="home" size={30} color={color} />
+            ),
+            tabBarLabelStyle: { fontSize: 12 },
+          }}
+        />
+        <Tabs.Screen
+          name="news/everything/index"
+          options={{
+            title: "Search News",
+            headerShown: false,
+            tabBarIcon: ({ color }) => (
+              <MaterialIcons name="search" size={30} color={color} />
+            ),
+            tabBarLabelStyle: { fontSize: 12 },
+          }}
+        />
+
+        <Tabs.Screen
           name="news/categories/countryCategories/index"
           options={{
             title: "All Countries",
@@ -62,8 +74,8 @@ export default function RootLayout() {   //code for bottom tab navigation
             href: null,
           }}
         />
-            </Tabs>
-        </QueryClientProvider>
+      </Tabs>
+    </QueryClientProvider>
 
-    );
+  );
 }
